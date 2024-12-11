@@ -1,0 +1,38 @@
+{
+  "name": "gfexbackend",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js-community/odata-v2-adapter": "^1.13.8",
+    "@cap-js/hana": "^1",
+    "@sap/cds": "^8",
+    "@sap/xssec": "^4",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.7.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "auth": "xsuaa",
+      "connectivity": true,
+      "destinations": true,
+      "application-logging": true,
+      "[hybrid]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      }
+    },
+    "sql": {
+      "native_hana_associations": false
+    }
+  }
+}
